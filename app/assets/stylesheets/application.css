@@ -1,0 +1,500 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+a {
+  text-decoration: none;
+}
+ 
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*fade機能*/
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+/*fade機能終わり*/
+
+html{
+  height: 100%;
+}
+body{
+  zoom:50%;
+  height: 100%;
+}
+#wrapper{
+  position: relative;
+  min-height: 100%;
+}
+.contents{
+  padding-bottom: 180px;
+}
+
+header {
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #848282;
+}
+.header-menu{
+  display: none;
+}
+.headline a{
+	font-size:86px;
+  color: white;
+}
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 80px;
+}
+.nav-list-item a{
+	font-size: 48px;
+  color: white;
+}
+
+.main-visual {
+  width: 100%;
+  height: 2160px;
+  background-image: url(img/top.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: fadeIn 6s ease 0s 1 normal;/* fade動作 */
+  -webkit-animation: fadeIn 6s ease 0s 1 normal;/* fade動作 */
+}
+.main-visual-content{
+  position: absolute;
+  top: 1100px;
+  left: 140px;
+  width: 40%;
+  height: 300px;
+  text-align: center;
+}
+.main-visual-text{
+  color: white;
+  font-size: 112px;
+  font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+.fi{
+  animation: fadeIn 8s ease 0s 1 normal;/* fade動作 */
+  -webkit-animation: fadeIn 8s ease 0s 1 normal;/* fade動作 */
+}
+
+.se{
+  animation: fadeIn 8s ease 0s 1 normal;/* fade動作 */
+  -webkit-animation: fadeIn 8s ease 0s 1 normal;/* fade動作 */
+  padding-left: 30px;
+}
+
+.top{
+  width: 100%;
+  height: 1980px;
+  background-image: url(img/about.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.start-content{
+  text-align: center;
+}
+.start{
+  font-size: 64px;
+  padding-top: 90px;
+}
+
+.about-main-visual{
+  margin-top: 90px;
+}
+.blog-image{
+  display: inline-block;
+  width: 2000px;
+  float: left;
+  padding-bottom: 90px;
+  padding-left: 500px;
+  padding-right: 100px;
+}
+h3{
+  font-size: 32px;
+}
+.about-content{
+  font-size: 48px;
+}
+
+.new{
+  width: 100%;
+  background-color: white;
+  padding-top:90px;
+}
+.edit{
+  width: 100%;
+  background-color: white;
+  padding-top:90px;
+}
+.new-content{
+  text-align: center;
+  font-size: 86px;
+  color: white;
+}
+.form-user{
+  width: 100%;
+  text-align: center;
+}
+.form-header-title{
+  font-size: 64px;
+  padding-top: 90px;
+}
+.form-body{
+  padding-top: 50px;
+  font-size: 48px;
+}
+
+.index{
+  font-size: 64px;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  padding-top:80px;
+}
+.show{
+  font-size: 64px;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  padding-top:80px;
+}
+
+.posts-show-item {
+  padding: 30px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.posts-show-item p {
+  font-size: 64px;
+  margin: 20px 0;
+}
+.posts-index-item{
+  padding-bottom: 30px;
+}
+.post-time {
+  color: #8899a6;
+  margin-bottom: 10px;
+  font-size: 48px;
+}
+
+.edit{
+  font-size: 64px;
+  text-align: center;
+}
+
+.flash {
+  color: white;
+  background: rgb(251, 170, 88);
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 48px;
+}
+
+.user-likes{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.user-ideas{
+  text-align: center;
+  padding-top: 30px;
+}
+.user-name{
+  padding-top: 20px;
+}
+.btn-lg{
+  font-size:36px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+footer{
+	width: 100%;
+  height: 180px;
+  text-align: center;
+	background-color: #848282;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width:425px) {
+ .contents{
+   padding-bottom: 120px;
+ }
+ header {
+  height: 120px;
+  width: 100%;
+  padding: 0px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #848282;
+  position: relative;
+ }
+ .hadline{
+ }
+ .headline a{
+  font-size:48px;
+  color: white;
+  line-height: 120px;
+ }
+ .nav-list {
+  display: none;
+ }
+ .nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 20px 40px;
+ }
+ .nav-list-item a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+ }
+ ul {
+  padding-left: 0;
+ }
+
+ li {
+  list-style: none;
+ }
+
+ .header-menu{
+  position: absolute;
+  display: block;
+ }
+
+ #menu {
+  position: fixed;
+  top: 0;
+  right: -340px; /* メニューのwidth + padding */
+  width: 300px; /* メニューのwidth */
+  height: 100%;
+  padding: 20px;
+  transition: left .5s, right .5s; /* アニメーション */
+  background-color: rgba(86, 86, 86, .7);
+  z-index: 10;
+ }
+
+ .toggle {
+  font-size: 50px;
+  cursor: pointer;
+  position: relative;
+  top: 15px;
+  left: 30px;
+ }
+
+ .toggle:hover {
+  text-decoration: underline;
+ }
+
+ #open {
+  display: none;
+ }
+ #open:checked + #menu {
+  right: 0;
+ }
+
+ .main-visual {
+  width: 100%;
+  height: 1600px;
+  background-image: url(img/top.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 0s ease 0s 1 normal;/* fade動作 */
+  -webkit-animation: fadeIn 0s ease 0s 1 normal;/* fade動作 */
+ }
+ .main-visual-content{
+  width: 100%;
+  position: static;
+  padding-top: 110px;
+ }
+ .main-visual-text{
+  color: white;
+  font-size: 56px;
+ }
+.se{
+  padding-left: 0px;
+}
+ .top{
+  width: 100%;
+  height: 1980px;
+  background-image: url(img/about.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: rgba( 0, 0, 0, 1);
+ }
+ .start-content{
+  text-align: center;
+ }
+ .start{
+  font-size: 64px;
+  padding-top: 0px;
+ }
+
+ .about-main-visual{
+  margin-top: 0px;
+ }
+ .blog-image{
+  display: none;
+  width: 90%;
+  float: left;
+  padding-bottom: 90px;
+  padding-left: 500px;
+  padding-right: 100px;
+ }
+ h3{
+  font-size: 32px;
+ }
+ .about-content{
+  font-size: 32px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+ .new{
+  width: 100%;
+  background-color: white;
+  padding-top:90px;
+ }
+ .edit{
+  width: 100%;
+  background-color: white;
+  padding-top:90px;
+ }
+ .new-content{
+  text-align: center;
+  font-size: 86px;
+  color: white;
+ }
+ .form-user{
+  width: 100%;
+  text-align: center;
+ }
+ .form-header-title{
+  font-size: 64px;
+  padding-top: 90px;
+ }
+ .form-body{
+  padding-top: 50px;
+  font-size: 48px;
+ }
+
+ .index{
+  font-size: 64px;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  padding-top:80px;
+ }
+ .show{
+  font-size: 64px;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  padding-top:80px;
+ }
+
+ .posts-show-item {
+  padding: 30px;
+  background-color: white;
+  overflow: hidden;
+ }
+
+ .posts-show-item p {
+  font-size: 64px;
+  margin: 20px 0;
+ }
+ .posts-index-item{
+  padding-bottom: 30px;
+ }
+ .post-time {
+  color: #8899a6;
+  margin-bottom: 10px;
+  font-size: 48px;
+ }
+
+ .edit{
+  font-size: 64px;
+  text-align: center;
+ }
+
+ .flash {
+  color: white;
+  background: rgb(251, 170, 88);
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 48px;
+ }
+
+ .user-likes{
+  text-align: center;
+  padding-top: 30px;
+ }
+
+ .user-ideas{
+  text-align: center;
+  padding-top: 30px;
+  font-size: 48px;
+ }
+ .user-name{
+  padding-top: 20px;
+ }
+ .btn-lg{
+  font-size:28px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+ footer{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: #848282;
+  position: absolute;
+  bottom: 0;
+ }
+
+}

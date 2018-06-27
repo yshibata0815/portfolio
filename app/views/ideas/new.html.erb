@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+	<meta charset="UTF-8">
+	<title>idee</title>
+	<link rel="stylesheet" href="style.css">
+
+ </head>
+
+ <body>
+
+	<div class="new">
+		<div class="new-content">
+			<h4>新規投稿</h4>
+			<div class="form">
+				<%= form_for(@idea) do |f| %>
+	    			<h4>Title</h4>
+    				<%= f.text_field :title, class: "title" %>
+  					<h4>内容</h4>
+    				<%= f.text_area :body, class: "text" %>
+			    	<%= f.submit '投稿',class: "post-text" %>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+
+ </body>
+</html>

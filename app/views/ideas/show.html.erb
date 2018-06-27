@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+	<meta charset="UTF-8">
+	<title>idee</title>
+	<link rel="stylesheet" href="style.css">
+
+ </head>
+
+ <body>
+	<div class="main posts-show">
+  		<div class="container">
+    		<div class="posts-show-item">
+
+				<div class="show">
+					<div class="form">
+						<p><%= "Title:" %>
+						   <%= @idea.title %>
+						</p>
+						<div class="post-time">
+							<%= "投稿日時" %>
+							<%= @idea.created_at %>
+						</div>
+						<p><%= "概要" %></p>
+						<div class="idea-content"><%= @idea.body %></div>
+						<%= "いいね！" %>
+     					<% if Like.find_by(user_id: current_user.id,post_id: @idea.id) %>
+        					<%= link_to("/likes/#{@idea.id}/destroy", {method: "post"}) do %>
+        						<span class="fa fa-heart like-btn-unlike"></span>
+        					<% end %>
+					    <% else %>
+        					<%= link_to("/likes/#{@idea.id}/create", {method: "post"}) do %>
+        						<span class="fa fa-heart like-btn"></span>
+        					<% end %>
+    					<% end %>
+
+    					<%= @likes_count %>
+
+						<p>
+							<% if @idea.user_id == current_user.id %>
+								<%= link_to "編集", edit_idea_path(@idea) %>|
+								<%= link_to"削除", idea_path(@idea),method: :delete %>
+							<% end %>
+						</p>
+
+						<%= form_tag("/ideas/comment") do %>
+    						<% if @idea.user_id != current_user.id %>
+    						<form>
+      						<div class="form-group">
+	        					<textarea name="comment" class="form-control"></textarea>
+   							     <textarea name="post_id" class="hidden"><%= @idea.id %></textarea>
+        						<textarea name="user_id" class="hidden"><%= current_user.id %></textarea>
+      						</div><!--form-group-->
+      						<button type="submit" class="btn btn-primary">コメント</button>
+
+      						<% end %>
+
+      						<div>
+      							<% @comments.each do |comment| %>
+      								<% if comment.post_id == @idea.id %>
+										<div class="idea-content">
+											<%= comment.comment %>
+										</div>
+										<div class="post-time">
+											<%= "投稿日時" %>
+											<%= comment.created_at %>
+										</div>
+									<% end %>
+									<!-- コメントした人と現在ログインしている人が一緒の場合 -->
+									<% if comment.user_id == current_user.id %>
+										<div class="comment-delete">
+											<%= link_to"削除", "/comment/#{comment.id}/destroy",{method: "post"} %>
+										</div>
+									<% end %>
+								<% end %>
+      						</div>
+
+    					<% end %>
+
+
+					</div>
+				</div>
+		    </div>
+		</div>
+	</div>
+ </body>
+</html>

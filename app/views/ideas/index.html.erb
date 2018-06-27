@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+	<meta charset="UTF-8">
+	<title>idee</title>
+	<link rel="stylesheet" href="style.css">
+
+ </head>
+
+ <body>
+	<div class="main posts-index">
+		<div class="index">
+			<div class="container">
+				<% @ideas.each do |idea| %>
+			 		<div class="posts-index-item">
+						<%= link_to idea.title, idea_path(idea) %>
+						<p><%= idea.created_at %></p>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	  </div>
+ </body>
+</html>

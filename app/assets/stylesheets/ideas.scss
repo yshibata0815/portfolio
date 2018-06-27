@@ -1,0 +1,119 @@
+// Place all the styles related to the ideas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.title{
+	color: black;
+	height:90px;
+	width:1000px;
+	font-size:36px;
+}
+.text{
+	height:900px;
+	width:1000px;
+	font-size:36px;
+}
+.post-text{
+	height:100px;
+	width:180px;
+	font-size:36px;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+.fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.hidden{
+	display:none;
+}
+.form{
+	padding-bottom: 90px;
+}
+.idea-content{
+	font-size:48px;
+	padding-bottom:30px;
+}
+.form-control{
+	margin-top:120px;
+	padding:60px 90px;
+	font-size:36px;
+}
+.btn-primary{
+	margin-bottom:60px;
+	font-size:36px;
+}
+.comment-delete{
+	font-size:48px;
+}
+
+
+@media screen and (max-width:425px) {  
+.form {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.title{
+	color: black;
+	height:90px;
+	width:90%;
+	font-size:28px;
+}
+.text{
+	height:600px;
+	width:90%;
+	font-size:28px;
+}
+.post-text{
+	height:80px;
+	width:180px;
+	font-size:28px;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+.fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.hidden{
+	display:none;
+}
+.form{
+	padding-bottom: 90px;
+}
+.idea-content{
+	font-size:48px;
+	padding-bottom:30px;
+}
+.form-control{
+	margin-top:120px;
+	padding:30px 60px;
+	font-size:36px;
+}
+.btn-primary{
+	margin-bottom:60px;
+	font-size:36px;
+}
+.comment-delete{
+	font-size:48px;
+}
+}

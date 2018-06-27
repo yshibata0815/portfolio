@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+	<meta charset="UTF-8">
+	<title>idee</title>
+	<link rel="stylesheet" href="style.css">
+
+ </head>
+
+ <body>
+
+	<div class="edit">
+		<h2>編集画面</h2>
+		<!-- form_for部分 -->
+		<%= form_for(@idea) do |f| %>
+		<div class="form">
+	 		<h4>Title</h4>
+    		<%= f.text_field :title, class: "title" %>
+  			<h4>本文</h4>
+    		<%= f.text_area :body, class: "text" %>
+    		<p><%= f.submit '保存', class: "post-text" %></p>
+    	</div>
+	<% end %>
+
+	</div>
+
+ </body>
+</html>

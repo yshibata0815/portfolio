@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=360,initial-scale=1">
+    <title>Idee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <header>
+        <div class="header-menu">
+
+          <label class="toggle" for="open"><i class="fa fa-bars" aria-hidden="true"></i>
+          </label>
+          <input id="open" type="checkbox">
+          <div id="menu">
+            <nav>
+              <ul>
+                <% if user_signed_in? %>
+                  <li class="nav-list-item">
+                    <a href="/ideas/new">投稿</a>
+                  </li>
+                  <li class="nav-list-item">
+                    <a href="/ideas">アイデア一覧</a>
+                  </li>
+                  <li class="nav-list-item">
+                    <a href="/users/index">ユーザー一覧</a>
+                  </li>
+                  <li class="nav-list-item">
+                     <%= link_to 'プロフィール', "/users/#{current_user.id}" %>
+                  </li>
+                  <li class="nav-list-item">
+                   <%= link_to 'ログアウト', destroy_user_session_path,method: :delete %>
+                  </li>
+
+                <% else %>
+                  <li class="nav-list-item">
+                    <a href="/about">About</a>
+                  </li>
+                  <li class="nav-list-item">
+                    <a href="/users/sign_up">新規登録</a>
+                   </li>
+                  <li class="nav-list-item">
+                    <a href="/users/sign_in">ログイン</a>
+                  </li>
+
+                <% end %>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <h1 class="headline">
+          <a href="/">idee</a>
+        </h1>
+
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="/">Top</a>
+            </li>
+
+           <% if user_signed_in? %>
+            <li class="nav-list-item">
+             <a href="/ideas/new">投稿</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="/ideas">アイデア一覧</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="/users/index">ユーザー一覧</a>
+            </li>
+            <li class="nav-list-item">
+             <%= link_to 'プロフィール', "/users/#{current_user.id}" %>
+            </li>
+            <li class="nav-list-item">
+              <%= link_to 'ログアウト', destroy_user_session_path,method: :delete %>
+            </li>
+
+           <% else %>
+            <li class="nav-list-item">
+              <a href="/about">About</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="/users/sign_up">新規登録</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="/users/sign_in">ログイン</a>
+            </li>
+
+           <% end %>
+          </ul>
+        </nav>
+    </header>
+    <!-- /header -->
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <div class="contents">
+      <%= yield %>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <p class="footer-text"></p>
+    </footer>
+
+    </div>
+  </body>
+</html>

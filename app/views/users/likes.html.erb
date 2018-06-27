@@ -1,0 +1,23 @@
+<div class="users">
+  <% provide(:title, @user.name) %>
+  <h1><%= @user.name %></h1>
+
+  <ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+    </ul>
+
+  <div class="user-show">
+    <% @likes.each do |like| %>
+      <% if like.user_id == @user.id %>
+        <div class="user-likes">
+          <% @ideas.each do |idea| %>
+            <% if like.post_id == idea.id %>
+             <%= link_to idea.title, idea %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
